@@ -1,0 +1,17 @@
+package gorest;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+import static org.hamcrest.Matchers.*;
+
+public class GetUser {
+	
+	@Test
+	public void getResource() {
+		RestAssured.given().contentType("application/json").header("Authorization","Bearer 2a34c2d6931041949491bc131720682ee0e60a249ecd39dbdac9598cdc1a1e04").
+		when().get("https://gorest.co.in/public/v2/users/3298").then().statusCode(200).log().all().and().body("email", is("aryaamaan@yahoo.com"));
+	}
+
+}

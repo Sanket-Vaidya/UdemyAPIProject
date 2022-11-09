@@ -1,0 +1,24 @@
+package restcountriesdemo;
+
+import org.junit.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class VerifyNumberofCharacters {
+	
+	@Test
+	public void getNumberOfCharacters() {
+		Response response = RestAssured.given().when().get("https://restcountries.com/v3.1/name/usa").
+				then().contentType(ContentType.JSON).extract().response();
+		
+		JsonPath jsonPath=response.jsonPath();
+		int numberofcharacters=jsonPath.get("[0].name.official").toString().replaceAll(" ","").length();
+		System.out.println(numberofcharacters);
+		Assert.assertTrue(numberofcharacters==21);
+	}
+
+}

@@ -1,0 +1,71 @@
+{
+	"id": "a4d9156b-ef32-418e-8ab2-1d21036801de",
+	"name": "ProjectGetAndPostRequest",
+	"timestamp": "2022-11-08T05:09:37.342Z",
+	"collection_id": "4fe9dd20-8984-412e-ba2a-66492f200275",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 1,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "06d825d5-7d6d-44bb-ac78-5b4c5551310a",
+			"name": "GETRequest",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 293,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				293
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "52131d0e-887d-4f95-a850-0ae99b0bc104",
+			"name": "PostRequestWithBearerToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 366,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				366
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 659,
+	"collection": {
+		"requests": [
+			{
+				"id": "06d825d5-7d6d-44bb-ac78-5b4c5551310a",
+				"method": "GET"
+			},
+			{
+				"id": "52131d0e-887d-4f95-a850-0ae99b0bc104",
+				"method": "POST"
+			}
+		]
+	}
+}
